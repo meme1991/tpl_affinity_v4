@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.0" type="template" client="site" method="upgrade">
+	<name>affinity</name>
+	<creationDate>2017-12-12</creationDate>
+	<author>SPEDI srl</author>
+	<authorEmail>sviluppo@spedi.it</authorEmail>
+	<authorUrl>www.spedi.it</authorUrl>
+	<copyright>2017</copyright>
+	<license>GNU/GPL</license>
+	<version>3.0.0</version>
+	<description>TPL_AFFINITY_DESC</description>
+	<files><!-- no need to change -->
+		<folder>css</folder>
+		<folder>dist</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>include</folder>
+		<folder>js</folder>
+		<folder>libreries</folder>
+		<folder>language</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>logic.php</filename>
+		<filename>offline.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	<languages folder="language">
+		<language tag="it-IT">it-IT/it-IT.tpl_affinty.ini</language>
+		<language tag="it-IT">it-IT/it-IT.tpl_affinty.sys.ini</language>
+	</languages>
+	<positions>
+		<!-- header position -->
+		<position>htop-left</position>
+		<position>htop-right</position>
+		<position>social</position>
+		<position>search</position>
+		<position>overlay</position>
+		<position>navbar</position>
+		<position>nav-side</position>
+
+		<!-- body position -->
+		<position>hero</position>
+		<position>servizi</position>
+		<position>entrypoint</position>
+		<position>utilita</position>
+		<position>breadcrumbs</position>
+		<position>nav-component</position>
+		<position>banners</position>
+		<position>pos_photogallery</position>
+		<position>ratingsite</position>
+		<position>position-1</position>
+		<position>position-2</position>
+
+		<!-- footer position -->
+		<position>footer-bottom</position>
+		<position>footer-links</position>
+
+		<!-- pos aside artile layout -->
+		<position>article-aside</position>
+		<position>article-top</position>
+		<position>article-bottom</position>
+	</positions>
+
+	<config>
+		<fields name="params">
+
+			<fieldset name="advanced" addfieldpath="/administrator/components/com_menus/models/fields">
+				<field
+					name="logo-s"
+					type="media"
+					label="TPL_AFFINITY_LOGO"
+					description="TPL_AFFINITY_LOGO_DESC"
+				 />
+
+				 <field
+ 					name="subtitle"
+ 					type="text"
+ 					label="TPL_AFFINITY_SUBTITLE"
+ 					description="TPL_AFFINITY_SUBTITLE_DESC"
+ 				 />
+			</fieldset>
+
+			<fieldset name="plugin" label="Plugins">
+
+				<field
+					name="aos"
+					type="radio"
+					default="0"
+					label="TPL_AFFINITY_AOS"
+					description="TPL_AFFINITY_AOS_DESC"
+					class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+	</config>
+
+</extension>

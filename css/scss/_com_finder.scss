@@ -1,0 +1,33 @@
+// main: template.scss
+
+.controls.finder-selects{
+  @extend .col-12;
+  @extend .col-sm-12;
+  @extend .col-md-3;
+}
+
+.finder{
+  fieldset{
+    padding: 15px;
+    margin: 0;
+    border: 1px solid $gray-500;
+    background: $gray-200;
+    legend{
+      display: block;
+      width: auto;
+      padding: 0 10px 0 10px;
+      margin-left: 20px;
+      font-size: 18px;
+      line-height: inherit;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+  #search-query-explained{
+    p{
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}

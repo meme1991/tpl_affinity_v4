@@ -1,0 +1,193 @@
+// main: template.scss
+
+/***************************
+     SELECT STYLES
+**************************/
+select {
+  display: inline-block;
+  max-width: 100%;
+  // height: calc(2.25rem + 2px);
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  line-height: 1.25;
+  color: $dark;
+  vertical-align: middle;
+  background: $white url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  background-size: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: $gray-600;
+    outline: none;
+  }
+
+  &:focus::-ms-value {
+    color: $dark;
+    background-color: $white;
+  }
+
+  &:disabled {
+    color: $gray-500;
+    cursor: not-allowed;
+    background-color: $gray-200;
+  }
+
+  &::-ms-expand {
+    opacity: 0;
+  }
+
+}
+
+
+
+/***************************
+ RADIO E CHECKBOX STYLES
+**************************/
+.custom-form{
+  input[type=radio],
+  input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    -webkit-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+    background: $input_cr_default_bgcolor;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+
+  input[type=radio],
+  input[type=checkbox]{
+    &:hover {
+      background: $input_cr_bgcolor_hover;
+    }
+    &:checked {
+      background: $primary;
+    }
+    &:checked::before {
+      height: 16px;
+      width: 16px;
+      position: absolute;
+      content: '✔';
+      display: inline-block;
+      font-size: 13px;
+      text-align: center;
+      line-height: 16px;
+    }
+    &:checked::after {
+      background: $primary;
+      content: '';
+      display: block;
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  input[type=radio]{
+    border-radius: 50%;
+    &::after {
+      border-radius: 50%;
+    }
+  }
+
+
+}
+
+
+// body label {
+//   line-height: 40px;
+// }
+
+.chzn-container .chzn-single{
+  background: #fff;
+  background-clip: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #444;
+  white-space: normal;
+  color: #464a4c;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+input[type=text],
+input[type=select],
+textarea,
+input[readonly=readonly]{
+  @extend .form-control;
+}
+
+.form-group{
+  position: relative;
+}
+label{
+  font-size: 14px;
+  margin-bottom: 0;
+  line-height: 20px !important;
+  &.checbox, &.radio{
+    font-size: 18px !important;
+  }
+}
+
+
+// terms GDPR
+.terms{
+  padding: 10px;
+  &.bg-dark{
+    .title, p, label {color: $light;}
+  }
+  &.bg-light{
+    .title, p, label {color: $dark;}
+  }
+  .title{
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  p, .desc{
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  label{
+    font-size: 14px;
+    a,a:hover,a:focus{
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  // input[type=checkbox]{
+  //   height: 15px;
+  //   width: 15px;
+  //   color: $white;
+  //   &:checked {
+  //     background: $primary;
+  //   }
+  //   &:checked::before {
+  //     height: 15px;
+  //     width: 15px;
+  //     font-size: 10px;
+  //     line-height: 15px;
+  //   }
+  // }
+}

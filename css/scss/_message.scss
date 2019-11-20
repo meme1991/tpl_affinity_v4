@@ -1,0 +1,91 @@
+// main:template.scss
+
+// #system-message-container{
+//   position: fixed;
+//   top: 30px;
+//   right: 30px;
+//   background-color: $light;
+//   width: 300px;
+//   max-height: 500px;
+// }
+
+.alert{
+  background-color: $white;
+  border-left-width: 10px;
+  @include boh-shadow_default;
+  color: $dark;
+  .icon{
+    float: left;
+    font-size: 40px;
+  }
+  h6,p{
+    padding-left: 70px;
+  }
+  h6{
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  p{
+    margin: 0;
+  }
+}
+
+//message
+.alert-message, .alert-notice{
+  border-color: $primary;
+  border-left: 10px $primary solid;
+  background-color: rgba($primary, .1);
+  p{
+    span{
+      color: $primary;
+    }
+  }
+}
+
+//info
+.alert-info{
+  border-color: $primary;
+  border-left: 10px $primary solid;
+  background-color: rgba($primary, .1);
+  p{
+    span{
+      color: $primary;
+    }
+  }
+}
+
+//warning
+.alert-warning{
+  border-color: $warning;
+  border-left: 10px $warning solid;
+  background-color: rgba($warning, .1);
+  p{
+    span{
+      color: $warning;
+    }
+  }
+}
+
+//danger
+.alert-danger{
+  border-color: $danger;
+  border-left: 10px $danger solid;
+  background-color: rgba($danger, .1);
+  p{
+    span{
+      color: $danger;
+    }
+  }
+}
+
+//success
+.alert-success{
+  border-color: $success;
+  border-left: 10px $success solid;
+  background-color: rgba($success, .1);
+  p{
+    span{
+      color: $success;
+    }
+  }
+}

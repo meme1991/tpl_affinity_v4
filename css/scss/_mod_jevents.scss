@@ -1,0 +1,30 @@
+// main: template.scss
+// @Author: SPEDI srl
+// @Date:   28-03-2018
+// @Email:  sviluppo@spedi.it
+// @Last modified by:   SPEDI srl
+// @Last modified time: 28-03-2018
+// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Copyright: Copyright (C) SPEDI srl
+
+.mod_jevents_latest{
+  &.footer-block{
+    .list-group{
+      .list-group-item{
+        background-color: transparent;
+        border: 0;
+        // border-top-width: 0 !important;
+        // border-right-width: 0;
+        border-bottom: 1px #495057 solid;
+        &.mod_events_latest_first{
+          margin-top: 8px;
+        }
+        .mod_events_latest_content{
+          a{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// main:template.scss
+
+/****************************
+        BREADCRUMBS
+****************************/
+.mod_breadcrumbs{
+  width: 100%;
+  border-bottom: 1px $light solid;
+  background-color: transparent;
+  .breadcrumb{
+    background-color: transparent;
+    @include link-hover($dark, $dark);
+    margin-bottom: 0;
+    font-size: 15px;
+  }
+}

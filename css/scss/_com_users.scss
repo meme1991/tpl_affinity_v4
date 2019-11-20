@@ -1,0 +1,97 @@
+// main:template.scss
+
+.com_users{
+  .page-title{
+    padding: 0;
+    // h1{
+    //   font-weight: 600;
+    // }
+  }
+  // &.registration, &.edit, &.profile{
+    .spacer label{
+      font-weight: 300 !important;
+      text-transform: lowercase !important;
+    }
+    .control-group{
+      margin-top: 10px;
+      .control-label label{
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    fieldset{
+      margin-bottom: 20px;
+    }
+    legend{
+      // background-color: $primary;
+      background: linear-gradient( 135deg, $primary 10%, $secondary 100%);
+      color: $white;
+      padding: 5px;
+      font-weight: 300;
+      font-size: 20px;
+    }
+    select{
+      width: 100% !important;
+      padding: 0.55rem 1.75rem 0.55rem 0.75rem !important;
+    }
+  // }
+
+  &.profile{
+    .dl-horizontal{
+      dt{
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &.edit{
+    .edit-form{
+      .control-group{
+        margin-bottom: 10px;
+      }
+      .btn-50{
+        width: 49.5%;
+      }
+    }
+  }
+
+  .toolbar{
+    background-color: $light;
+    padding-left: 15px;
+    padding-right: 15px;
+    .inline-menu{
+      a, a:hover, a:focus{
+        color: $dark;
+        text-transform: uppercase;
+        font-weight: 700;
+        &.danger{
+          color: $danger;
+        }
+      }
+      .list-inline-item{
+        &:active{
+          > a{
+            text-decoration: underline !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.com_privacy{
+  .page-title{
+    padding: 0;
+    // h1{
+    //   font-weight: 600;
+    // }
+  }
+  .control-group{
+    margin-bottom: 10px;
+  }
+  select{
+    width: 100% !important;
+    padding: 0.55rem 1.75rem 0.55rem 0.75rem !important;
+  }
+}

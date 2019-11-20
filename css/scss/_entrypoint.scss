@@ -1,0 +1,41 @@
+// main: template.scss
+
+.entrypoint{
+  // > .container{
+  //   @include media-breakpoint-down(md){
+  //     width: auto;
+  //   }
+  // }
+  .entrypoint-default{
+    .icon{
+      position: relative;
+      background-color: $primary;
+      width: 60px;
+      height: 60px;
+      color: #fff;
+      -webkit-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+      box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+      @include transition(all, 0.3s, ease-in-out);
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 20px;
+        right: -10px;
+        border-bottom: 10px solid transparent;
+        border-top: 10px solid transparent;
+        border-left: 0.6em solid $primary;
+      }
+    }
+    h3{
+      padding-left: 30px;
+    }
+    &:hover{
+      .icon{
+        -webkit-transform: translate(10px, 0);
+                transform: translate(10px, 0);
+        @include transition(all, 0.3s, ease-in-out);
+      }
+    }
+  }
+}

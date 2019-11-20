@@ -1,0 +1,29 @@
+// main:template.scss
+
+.tag-category{
+
+  select{
+    @extend .form-control-sm;
+  }
+  label{
+    height: 24px;
+    line-height: 18px;
+  }
+
+  .card-default{
+    background: $light;
+    figure{
+      &::after{
+        border-bottom-color: $light;
+      }
+    }
+  }
+
+  .list-group-item{
+    h4{
+      .icon{
+        font-size: 20px;
+      }
+    }
+  }
+}

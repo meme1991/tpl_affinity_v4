@@ -1,0 +1,84 @@
+// compileCompressed: ../$1.min.css
+
+/***************************
+        BOOTSTRAP V4
+***************************/
+@import "bootstrapv4/functions";
+// @import "bootstrapv4/variables";
+@import "bootstrap_variables.scss";
+@import "bootstrapv4/mixins";
+@import "bootstrapv4/root";
+@import "bootstrapv4/print";
+@import "bootstrapv4/reboot";
+@import "bootstrapv4/type";
+// @import "bootstrapv4/images";
+// @import "bootstrapv4/code";
+@import "bootstrapv4/grid";
+// @import "bootstrapv4/tables";
+@import "bootstrapv4/forms";
+@import "bootstrapv4/buttons";
+// @import "bootstrapv4/transitions";
+// @import "bootstrapv4/dropdown";
+@import "bootstrapv4/button-group";
+@import "bootstrapv4/input-group";
+// @import "bootstrapv4/custom-forms";
+// @import "bootstrapv4/nav";
+// @import "bootstrapv4/navbar";
+// @import "bootstrapv4/card";
+// @import "bootstrapv4/breadcrumb";
+// @import "bootstrapv4/pagination";
+// @import "bootstrapv4/badge";
+// @import "bootstrapv4/jumbotron";
+// @import "bootstrapv4/alert";
+// @import "bootstrapv4/progress";
+// @import "bootstrapv4/media";
+// @import "bootstrapv4/list-group";
+// @import "bootstrapv4/close";
+// @import "bootstrapv4/modal";
+// @import "bootstrapv4/tooltip";
+// @import "bootstrapv4/popover";
+// @import "bootstrapv4/carousel";
+@import "bootstrapv4/utilities";
+
+/*************************
+        TEMPLATE
+************************/
+@import "variables.scss";
+// @import "mixin.scss";
+@import "typography.scss";
+//
+// @import "forms.scss";
+// @import "html.scss";
+//
+// @import "header.scss";
+// @import "main.scss";
+// @import "footer.scss";
+// @import "message.scss";
+
+
+// componenti
+// @import "card.scss";
+
+
+// @import "com_phocadownload.scss";
+// @import "com_phocagallery.scss";
+// @import "com_content.scss";
+// @import "com_contact.scss";
+// @import "com_users.scss";
+// @import "com_search.scss";
+// @import "com_finder.scss";
+// @import "com_tags.scss";
+//
+
+// moduli
+// @import "mod_breadcrumbs.scss";
+// @import "mod_login.scss";
+// @import "mod_banner.scss";
+// @import "mod_tags.scss";
+// @import "mod_search-overlay.scss";
+// @import "offcanvas.scss";
+// @import "entrypoint.scss";
+
+.sidebar{
+  @extend .d-print-none;
+}

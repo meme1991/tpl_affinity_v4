@@ -1,0 +1,170 @@
+// main:template.scss
+
+/*******************************
+CUSTOMIZZAZIONE ARTICOLO - singolo articolo
+*******************************/
+.article-view{
+
+  article{
+
+    img{
+      @extend .img-fluid;
+      position: relative;
+      &.pull-left{
+        @extend .float-left;
+        margin: 15px 15px 15px 0;
+      }
+      &.pull-right{
+        @extend .float-right;
+        margin: 15px 0 15px 15px;
+      }
+    }
+
+    figure{
+      &.float-left{
+        margin: 15px 15px 15px 0;
+        img{
+          margin: 0;
+        }
+      }
+      &.float-right{
+        margin: 15px 0 15px 15px;
+        img{
+          margin: 0;
+        }
+      }
+    }
+
+    p,
+    ul{
+      margin-bottom: 32px;
+    }
+
+    .articleBody{
+      margin-top: 32px;
+    }
+
+    // figure.default{
+    //   position: relative;
+    //   figcaption{
+    //     background-color: $featured;
+    //     color: #fff;
+    //     opacity: 0;
+    //     -webkit-transform: scale(0.5);
+    //             transform: scale(0.5);
+    //     @include transition(all, 0.3s, ease-in-out);
+    //   }
+    //   a, figcaption{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    //   &:hover{
+    //     figcaption{
+    //       opacity: 0.7;
+    //       -webkit-transform: scale(1);
+    //               transform: scale(1);
+    //       @include transition(all, 0.3s, ease-in-out);
+    //     }
+    //   }
+    // }
+
+
+  }
+}
+
+
+.icons-share{
+  > ul{
+    margin-top: 2px;
+  }
+  .fa-circle{
+    color: $light;
+    @include transition(all, .3s, ease-in-out);
+  }
+  .fa-inverse{
+    color: $dark;
+    @include transition(all, .3s, ease-in-out);
+  }
+
+  .social-share{
+    .fa-inverse{
+      color: $light;
+      @include transition(all, .3s, ease-in-out);
+    }
+
+    .facebook{
+      .fa-circle{
+        color: #4267b2;
+      }
+    }
+    .twitter{
+      .fa-circle{
+        color: #1da1f2;
+      }
+    }
+    .google-plus{
+      .fa-circle{
+        color: #db4437;
+      }
+    }
+    .whatsapp{
+      .fa-circle{
+        color: #1EBEA5;
+      }
+    }
+  }
+
+}
+
+.support-content{
+  .articleBody{
+    width: 100%;
+  }
+}
+
+
+// contenuti in generale
+// jevents e altro
+.article-view article,
+.jev_eventdetails_body{
+  img{
+    @extend .img-fluid;
+    position: relative;
+    &.pull-left{
+      @extend .float-left;
+      margin: 15px 15px 15px 0;
+    }
+    &.pull-right{
+      @extend .float-right;
+      margin: 15px 0 15px 15px;
+    }
+  }
+
+  figure{
+    &.float-left{
+      margin: 15px 15px 15px 0;
+      img{
+        margin: 0;
+      }
+    }
+    &.float-right{
+      margin: 15px 0 15px 15px;
+      img{
+        margin: 0;
+      }
+    }
+  }
+
+  p,
+  ul{
+    margin-bottom: 32px;
+  }
+
+  .articleBody{
+    margin-top: 32px;
+  }
+
+}

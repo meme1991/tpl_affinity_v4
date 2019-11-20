@@ -1,0 +1,104 @@
+//main: template.scss
+
+/**************************
+      NAV COMPONENT
+**************************/
+.nav-component{
+  @include media-breakpoint-down(md){
+    > .container{
+      max-width: 100% !important;
+      height: 47px;
+      overflow-y: hidden;
+      .inline-menu{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
+}
+
+/**************************
+          SERVIZI
+***************************/
+.servizi{
+  &-featured{
+    h3{
+      border-bottom: 8px $dark solid;
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      font-weight: bold;
+      color: $dark;
+      @include media-breakpoint-down(sm){
+        font-size: 1.5em;
+      }
+    }
+    a, a:hover, a:focus{
+      color: $dark;
+      border: 0;
+      border-bottom: 1px rgba(0, 0, 0, 0.125) solid;
+      margin: 0;
+      background-color: transparent;
+      &:hover{
+        text-decoration: underline;
+        background-color: $light;
+      }
+    }
+  }
+}
+
+/**************************
+      UTILITY AREA
+***************************/
+.utility{
+  h2{
+    color: $white;
+  }
+  ul.list-group{
+    border-top: 1px $white solid;
+    a, a:hover, a:focus{
+      color: $white;
+      border: 0;
+      background-color: transparent;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/**************************
+          RATINGS
+***************************/
+.rating-container{
+  background-color: $featured;
+  color: $dark;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/**************************
+SKIP LINK
+**************************/
+.skip-link{
+  li{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    z-index: 5;
+    overflow: hidden;
+    &.focus{
+      height: 27px;
+      padding: 0 5px;
+      background-color: $white;
+    }
+  }
+}

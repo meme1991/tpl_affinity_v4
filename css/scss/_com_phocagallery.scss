@@ -1,0 +1,17 @@
+// main:template.scss
+
+// categoria
+.pg-category-view{
+  .card{
+    border: 0;
+    border-bottom: 5px $light solid;
+    border-radius: .25rem .25rem 0 0;
+  }
+}
+
+//categorie
+// .pg-categories-view{
+//   .card{
+//     @extend figure.default;
+//   }
+// }

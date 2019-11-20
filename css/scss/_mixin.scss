@@ -1,0 +1,59 @@
+//main: template.scss
+
+@mixin background-cover($img_url){
+  background: url($img_url) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// cover
+@mixin cover($w, $h){
+  width: $w;
+  height: $h;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// colore di un link monocromatico
+@mixin link-monocolor($color){
+  a,
+  a:hover,
+  a:focus,
+  a:active{
+    color: $color;
+  }
+}
+
+// colore di un link monocromatico
+@mixin link-hover($default, $hover){
+  a{
+    color: $default;
+    @include transition(all, 0.3s, ease-in-out);
+  }
+  a:hover,
+  a:focus,
+  a:active{
+    color: $hover;
+    @include transition(all, 0.3s, ease-in-out);
+  }
+}
+
+// transizioni
+@mixin transition($element, $duration, $transition) {
+  transition: $element $duration $transition;
+  -webkit-transition: $element $duration $transition;
+  -moz-transition: $element $duration $transition;
+  -o-transition: $element $duration $transition;
+}
+
+// box shadow predefinito
+@mixin boh-shadow_default {
+  -webkit-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+}

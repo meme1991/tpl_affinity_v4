@@ -1,0 +1,54 @@
+//main: template.scss
+
+// resposnive breakpoint
+// da 0 a 576px
+$media_xs: '(max-width:576px)';
+// da 577px a 768px
+$media_sm: '(max-width:768px)';
+// da 767px a 992px
+$media_md: '(max-width:992px)';
+// da 992px a 1200px
+$media_lg: '(max-width:1200px)';
+
+// @include media-breakpoint-down(xs) { ... }
+// @include media-breakpoint-down(sm) { ... }
+// @include media-breakpoint-down(md) { ... }
+// @include media-breakpoint-down(lg) { ... }
+
+
+// $light: #eee;
+// $primary: #007bff;
+// $secondary: #868e96;
+// $white: #fff;
+// $dark: #1C2024;
+// $featured: #65dcdf;
+
+/*******************************
+HTML
+********************************/
+  // sidebar
+  $sidebar_border_width: 8px;
+
+  // sep line
+  $sepLine_hieght: 2px;
+
+/*******************************
+FORM
+********************************/
+  //checkbox e radio
+  $input_cr_default_bgcolor: #cbd1d8;
+  $input_cr_bgcolor_hover: #9faab7;
+
+/*******************************
+HEADER
+********************************/
+  //header-top
+  $headerTop_bgcolor: #162235;
+  $headerTop_color: $white;
+
+/*******************************
+FOOTER
+********************************/
+  $footer_bgcolor: #30373d;
+  $footer_title_color: $white;
+  $footer_text_color: $gray-200;

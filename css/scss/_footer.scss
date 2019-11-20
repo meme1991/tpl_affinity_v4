@@ -1,0 +1,119 @@
+//main: template.scss
+
+.footer{
+  background-color: $footer_bgcolor;
+  color: $footer_text_color;
+  padding-bottom: 0;
+
+  .footer-sitename{
+    p{
+      color: $footer_text_color;
+      font-size: 25px;
+    }
+  }
+
+  .footer-title{
+    border-bottom: 1px $gray-700 solid;
+    padding-bottom: 8px;
+    h5{
+      color: $white;
+      font-weight: 700;
+    }
+  }
+
+  p,address,a,small,li{
+    color: $light;
+    font-size: 15px;
+  }
+
+  a, a:hover, a:focus{
+    color: $featured;
+  }
+
+  ul.list-group{
+    a, a:hover, a:focus{
+      border: 0;
+      border-bottom: 1px $gray-700 solid;
+      margin: 0;
+      background-color: transparent;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .inline-menu{
+    ul{
+      li{
+        padding: 5px;
+        @include link-hover(rgba($white,.3), rgba($white,.3));
+        // &.delimiter{
+        //   &::after{
+        //     content: '\f111';
+        //     font-family: 'Font Awesome 5 Pro';
+        //     font-weight: 700;
+        //     // position: absolute;
+        //     // right: 0;
+        //     // bottom: 50%;
+        //     // margin-bottom: -9px;
+        //     // width: 1px;
+        //     // height: 18px;
+        //     background-color: rgba($white,.3);
+        //   }
+        // }
+        &:last-child{
+          padding-right: 0;
+        }
+        &:first-child{
+          padding-left: 0;
+        }
+      }
+    }
+
+    &.syndicate{
+      li{
+        padding-left: 10px !important;
+        @include link-hover($gray-600, $gray-600);
+        &::before{
+          content: '';
+          position: absolute;
+          left: 5px;
+          bottom: 50%;
+          margin-bottom: -9px;
+          width: 1px;
+          height: 18px;
+          background-color: $gray-600;
+        }
+      }
+    }
+  }
+
+  .footer-links{
+    background-color: $dark;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    // generale
+    p{
+      margin-bottom: 0;
+    }
+    p,a,a:hover{
+      color: rgba($white,.3);
+      font-weight: 300;
+    }
+    // credits
+    .credits{
+      text-align: right;
+      a{text-decoration: none;}
+      @include media-breakpoint-down(md){
+        text-align: left;
+      }
+    }
+    // inline menu
+    .inline-menu{
+      ul > li{
+        padding-top: 0;
+      }
+    }
+
+  }
+}

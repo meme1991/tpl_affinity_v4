@@ -1,0 +1,39 @@
+// main: template.scss
+
+/**************************
+Single category list view
+***************************/
+.search{
+  label{
+    margin-right: 20px;
+  }
+
+  select{
+    @extend .form-control-sm;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+  fieldset{
+    padding: 15px;
+    margin: 0;
+    border: 1px solid $gray-500;
+    background: $gray-200;
+    legend{
+      display: block;
+      width: auto;
+      padding: 0 10px 0 10px;
+      margin-left: 20px;
+      font-size: 18px;
+      line-height: inherit;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+}
+
+span.highlight {
+	background-color:#FFFFCC;
+	font-weight:bold;
+	padding:1px 0;
+}

@@ -1,0 +1,38 @@
+// main: template.scss
+
+.mod_login{
+  .btn-link{
+    color: $headerTop_color;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .dropdown-menu{
+    // border-radius: 0;
+    // margin-top: 0;
+    padding: 15px;
+    // min-width: 15rem;
+    background: $white;
+    -webkit-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.75);
+  }
+  &.logout{
+    .dropdown-menu{
+      padding: 5px;
+      // min-width: 5rem;
+      .dropdown-item{
+        // padding: 4px 10px;
+        border-bottom: 0;
+      }
+    }
+  }
+  button{
+    cursor: pointer;
+  }
+}
+
+.modal-login{
+  .modal-body{
+    color: $dark;
+  }
+}

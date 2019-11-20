@@ -1,0 +1,14 @@
+// main: template.scss
+
+// servizi correlati
+.featured-content{
+  border: 1px $light solid;
+  span{
+    background-color: rgba($primary, .2);
+    color: $primary;
+    padding: 8px 16px;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-right-color: $primary;
+  }
+}

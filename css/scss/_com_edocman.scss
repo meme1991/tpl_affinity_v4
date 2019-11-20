@@ -1,0 +1,37 @@
+// main:template.scss
+
+// @Author: SPEDI srl
+// @Date:   30-07-2019
+// @Email:  sviluppo@spedi.it
+// @Last modified by:   SPEDI srl
+// @Last modified time: 30-07-2019
+// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Copyright: Copyright (C) SPEDI srl
+
+.edocman-container{
+  .page-title, .page-heading{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#edocman-category{
+  .edocman-page-heading{
+    font-weight: 300;
+  }
+  .edocman-description{
+    font-weight: 300;
+  }
+  .edocman-thumb-left{
+    margin-right: 20px;
+  }
+}
+#edocman-category-page-table{
+  .page-heading{
+    text-transform: uppercase;
+  }
+}
+
+.edocman-page-heading{
+  font-weight: 300;
+}

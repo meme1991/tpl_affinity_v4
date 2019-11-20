@@ -1,0 +1,42 @@
+// main: template.scss
+
+/************************************
+          SINGOLO CONTATTO
+*************************************/
+.contact{
+  .field{
+    margin-top: 16px;
+    padding-bottom: 8px;
+    @extend .sep-line;
+  }
+
+  .form-module{
+    .control-label{
+      label{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .figure{
+    figure{
+      img{
+        @include boh-shadow_default;
+      }
+    }
+  }
+  iframe.googleMaps{
+    width: 100% !important;
+    min-height: 300px !important;
+    border: 0 !important;
+    border-width: 0 !important;
+  }
+
+  // terms GDPR
+  .terms{
+    &.bg-light{
+      border-top: 3px #c8c8c8 solid;
+    }
+  }
+
+}

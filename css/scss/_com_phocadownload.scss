@@ -1,0 +1,193 @@
+// main: template.scss
+
+/*******************************
+        VISTA CATEGORIA
+********************************/
+.pd-category-view{
+  img{
+    @extend .img-fluid;
+  }
+
+  .list-group.file-list{
+    .button-box{
+      .btn-primary{
+        position: relative;
+        &::before{
+          position: relative;
+          content: 'DOWNLOAD';
+          color: $white !important;
+        }
+        &::after{
+          position: relative;
+          content: '\f33d';
+          font-family: 'Font Awesome 5 Pro';
+          padding-left: 4px;
+          font-weight: 900;
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.pd-category, .pd-file-view{
+  .orange{
+    .fa-stack-2x{
+      color: rgba(#d24726, .2);
+    }
+    .fa-stack-1x{
+      color: #d24726;
+    }
+  }
+
+  // image - picture
+  .light-blue{
+    .fa-stack-2x{
+      color: rgba(#0078d7, .2);
+    }
+    .fa-stack-1x{
+      color: #0078d7;
+    }
+  }
+  // zip
+  .yellow{
+    .fa-stack-2x{
+      color: rgba(#e6b938, .2);
+    }
+    .fa-stack-1x{
+      color: #e6b938;
+    }
+  }
+  // pdf
+  .red{
+    .fa-stack-2x{
+      color: rgba(#e31e00, .2);
+    }
+    .fa-stack-1x{
+      color: #e31e00;
+    }
+  }
+  // word
+  .blue{
+    .fa-stack-2x{
+      color: rgba(#2c579b, .2);
+    }
+    .fa-stack-1x{
+      color: #2c579b;
+    }
+  }
+  // excel
+  .green{
+    .fa-stack-2x{
+      color: rgba(#217345, .2);
+    }
+    .fa-stack-1x{
+      color: #217345;
+    }
+  }
+
+}
+
+/*******************************
+          VISTA FILE
+********************************/
+.pd-file-view{
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+/*******************************
+LISTA FILE NEL PLUGINS
+********************************/
+.article-list{
+  border: 1px $light solid;
+  span{
+    background-color: rgba($primary, .2);
+    color: $primary;
+    padding: 8px 16px;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-right-color: $primary;
+  }
+  a{
+    padding: 8px;
+  }
+  small{
+    display: inline-block !important;
+  }
+
+  // image - picture
+  &.light-blue{
+    // border-color: #0078d7;
+    span{
+      color: #0078d7;
+      background-color: rgba(#0078d7, .2);
+      border-color: #0078d7;
+    }
+  }
+  // zip
+  &.yellow{
+    // border-color: #fdda74;
+    span{
+      color: #e6b938;
+      background-color: rgba(#e6b938, .2);
+      border-color: #e6b938;
+    }
+  }
+  // pdf
+  &.red{
+    // border-color: #ff0000;
+    span{
+      color: #e31e00;
+      background-color: rgba(#e31e00, .2);
+      border-color: #e31e00;
+    }
+  }
+  // word
+  &.blue{
+    span{
+      color: #2c579b;
+      background-color: rgba(#2c579b, .2);
+      border-color: #2c579b;
+    }
+  }
+  // excel
+  &.green{
+    span{
+      color: #217345;
+      background-color: rgba(#217345, .2);
+      border-color: #217345;
+    }
+  }
+  // ppt
+  &.orange{
+    span{
+      color: #d24726;
+      background-color: rgba(#d24726, .2);
+      border-color: #d24726;
+    }
+  }
+
+}
+
+.phocadownloadfilelist{
+  i{
+    @include transition(all, 0.3s, ease-in-out);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  &--open{
+    i{
+      @include transition(all, 0.3s, ease-in-out);
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+  }
+}
+.phocadownloadfilelist-container{
+  li{
+    &:nth-child(odd){
+      background-color: $light !important;
+    }
+  }
+}

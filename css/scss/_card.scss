@@ -1,0 +1,170 @@
+// main: template.scss
+
+/***************************************
+CARD
+***************************************/
+.card{
+  overflow: hidden;
+  small{
+    font-weight: 300;
+  }
+
+  &.card-default{
+    border: 0;
+    background-color: $white;
+    @include transition(all, 0.3s, ease-in-out);
+
+    .card-block{
+      padding: 16px;
+      .card-h{
+        margin-bottom: 12px;
+      }
+      small{
+        display: block;
+      }
+    }
+
+    &:hover{
+      @include boh-shadow_default();
+      @include transition(all, 0.3s, ease-in-out);
+    }
+
+    iframe{
+      width: 100% !important;
+      margin: 15px 0 !important;
+      border: 0 !important;
+      border-width: 0 !important;
+    }
+
+  }
+
+  &.card-block{
+    border: 0;
+    border-radius: 0;
+    border-top: 10px $light solid;
+    figure.default{
+      width: 100%;
+      height: 250px !important;
+      margin-bottom: 20px;
+      img{
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+    }
+    .card-text{
+      font-weight: 300;
+    }
+  }
+
+  &.list-default{
+    border: 0;
+    border-top: 2px $light solid;
+    border-radius: 0;
+    .list-h{
+      small{
+        position: relative;
+      }
+      div > div{
+        small{
+          &:not(:last-child){
+            padding-right: 16px;
+            &::after{
+              content: '';
+              position: absolute;
+              right: 6px;
+              bottom: 50%;
+              margin-bottom: -7px;
+              width: 1px;
+              height: 14px;
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+          }
+        }
+      }
+
+    }
+    .list-body{
+      figure.default{
+        @include boh-shadow_default();
+        &::after{
+          display: none !important;
+        }
+        img{
+          max-width: 300px;
+          max-height: 200px;
+        }
+      }
+    }
+  }
+}
+
+// image card default
+.card{
+  figure.default{
+    position: relative;
+    height: 100%;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -30px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 1.5em solid $white;
+    }
+    figcaption{
+      background-color: $featured;
+      color: $white;
+      opacity: 0;
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      @include transition(all, 0.3s, ease-in-out);
+    }
+    a, figcaption{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &:hover{
+    figure.default > figcaption{
+      opacity: 0.7;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      @include transition(all, 0.3s, ease-in-out);
+    }
+  }
+}
+
+
+/***************************************
+LISTE
+***************************************/
+.list-group{
+  &.list-small{
+    li{
+      border: 0;
+      border-top: 2px $light solid;
+      h4{
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// vista blog
+.blog-view{
+  .card-default{
+    background-color: $light;
+    figure{
+      &::after{
+        border-bottom-color: $light;
+      }
+    }
+  }
+}
