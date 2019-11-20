@@ -12,20 +12,19 @@ header{
            NAVBAR BANNER
   *******************************/
   .header-top{
-    background-color: $headerTop_bgcolor;
-    color: $headerTop_color;
+    background-color: #162235;
+    color: $white;
 
     // per top-nav collapse
     @include media-breakpoint-down(md){
-      position: relative;
-      z-index: 1101;
+      > .container{
+        max-width: 100% !important;
+      }
     }
 
     .htop-left{
-      @include media-breakpoint-up(lg){
-        > .offcanvas-collapse > div{
-          margin-right: 10px;
-        }
+      > div{
+        margin-right: 10px;
       }
     }
     .htop-right{
@@ -34,60 +33,17 @@ header{
       }
     }
 
-    // per top-nav collapse
-    //.htop-right,
-    .htop-left{
-      @include media-breakpoint-down(md){
-        display: block !important;
-        .inline-menu, .social-topbar, .search, .form-search, .input-group{
-          width: 100% !important;
-        }
-        .search{
-          margin-top: 8px !important;
-          padding: 0;
-          form{
-            input.form-control{
-              padding: 10px;
-            }
-            button{
-              padding: 10px;
-            }
-          }
-        }
-        .inline-menu{
-          .list-inline{
-            .list-inline-item{
-              display: block !important;
-              padding-left: 8px !important;
-              &::after{
-                display: none !important;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .navbar-toggler{
-      color: $light;
-      border-width: 0;
-      margin-left: 15px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      > i{
-        display: block;
-        font-size: 30px;
-      }
-    }
-
     // inline menu
     .inline-menu{
       ul{
         li{
-          @include link-hover($headerTop_color, $headerTop_color);
+          padding-top: 5px;
+          padding-bottom: 5px;
+          font-size: 16px;
+          @include link-hover($white, $white);
           &.delimiter{
             &::after{
-              background-color: $headerTop_color;
+              background-color: $white;
             }
           }
         }
@@ -112,9 +68,9 @@ header{
         .fa-stack{
           font-size: 14px;
         }
-        @include link-hover($headerTop_color, $headerTop_color);
+        @include link-hover($white, $white);
         .fa-inverse{
-          color: $headerTop_bgcolor;
+          color: #162235;
         }
         &:first-child{
           display: none;
@@ -163,12 +119,12 @@ header{
           border: 0;
           font-size: 16px;
           background-color: transparent;
-          color: $headerTop_color;
+          color: $white;
         }
         .btn-secondary:active,
         .btn-secondary.active,
         .show>.btn-secondary.dropdown-toggle {
-          color: $headerTop_color;
+          color: $white;
           background-color: transparent;
           background-image: none;
           border: 0;
@@ -186,12 +142,12 @@ header{
         }
       }
       .list-inline{
-        @include link-hover($headerTop_color, $headerTop_color);
+        @include link-hover($white, $white);
         li{
           position: relative;
           margin: 0;
           padding: 10px 0;
-          @include link-hover($headerTop_color, $headerTop_color);
+          @include link-hover($white, $white);
           &.active{
             font-weight: bold;
             text-decoration: underline;
@@ -206,7 +162,7 @@ header{
               margin-bottom: -9px;
               width: 1px;
               height: 18px;
-              background-color: $headerTop_color;
+              background-color: $white;
             }
           }
         }
@@ -222,10 +178,17 @@ header{
     padding-top: 20px;
     padding-bottom: 20px;
     @include transition(all, 0.3s, ease-in-out);
-    @include media-breakpoint-down(sm){
-      padding-top: 15px;
-      padding-bottom: 15px;
+    @include media-breakpoint-down(md){
+      // display: none;
+      // transform: translateY(-80px);
+      // > .container{
+      //   max-width: 100% !important;
+      // }
     }
+    // @include media-breakpoint-down(sm){
+    //   padding-top: 15px;
+    //   padding-bottom: 15px;
+    // }
 
     // site name
     .site-name{
@@ -247,21 +210,21 @@ header{
           max-height: 50px;
         }
       }
-      @media (max-width: 1280px) and (min-width: 1200px){
-        padding-left: 50px;
-      }
-      @media (max-width: 1120px) and (min-width: 992px){
-        padding-left: 70px;
-      }
-      @media (max-width: 870px) and (min-width: 768px){
-        padding-left: 60px;
-      }
-      @media (max-width: 690px) and (min-width: 576px){
-        padding-left: 60px;
-      }
-      @include media-breakpoint-down(xs){
-        padding-left: 60px;
-      }
+      // @media (max-width: 1280px) and (min-width: 1200px){
+      //   padding-left: 50px;
+      // }
+      // @media (max-width: 1120px) and (min-width: 992px){
+      //   padding-left: 70px;
+      // }
+      // @media (max-width: 870px) and (min-width: 768px){
+      //   padding-left: 60px;
+      // }
+      // @media (max-width: 690px) and (min-width: 576px){
+      //   padding-left: 60px;
+      // }
+      // @include media-breakpoint-down(xs){
+      //   padding-left: 60px;
+      // }
     }
 
     // social bar
@@ -319,33 +282,43 @@ header{
       }
     }
 
-    &.fixed-top{
-      padding: 5px;
-      border-bottom: 1px $primary solid;
-      @include transition(all, 0.3s, ease-in-out);
-      .site-name{
-        a{
-          @include transition(all, 0.3s, ease-in-out);
-          h1{
-            font-size: 25px;
-          }
+    &.scroll{
+      @include media-breakpoint-down(md){
+        // display: block;
+        .site-name{
+          position: fixed;
+          top: 5px;
+          left: 60px;
+          z-index: 1031;
         }
-        img{
-          max-height: 50px;
-          width: auto;
-          @include transition(all, 0.3s, ease-in-out);
-        }
-      }
-      .social-bar-wrapper{
-        display: none;
       }
     }
-  }
 
+    // &.fixed-top{
+    //   padding: 5px;
+    //   border-bottom: 1px $primary solid;
+    //   @include transition(all, 0.3s, ease-in-out);
+    //   .site-name{
+    //     a{
+    //       @include transition(all, 0.3s, ease-in-out);
+    //       h1{
+    //         font-size: 25px;
+    //       }
+    //     }
+    //     img{
+    //       max-height: 50px;
+    //       width: auto;
+    //       @include transition(all, 0.3s, ease-in-out);
+    //     }
+    //   }
+    //   .social-bar-wrapper{
+    //     display: none;
+    //   }
+    // }
+  }
   /*******************************
            NAVBAR STYLE
   *******************************/
-
   .header-nav{
     background-color: $primary;
     padding: 0;
@@ -438,6 +411,7 @@ header{
         margin-left: 15px;
         > i, .navbar-toggler-text{
           display: block;
+          color: $white;
         }
         > i{
           font-size: 30px;

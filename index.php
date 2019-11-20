@@ -27,7 +27,7 @@
 		<jdoc:include type="modules" name="overlay" />
 	<?php endif; ?>
 
-	<?php if ($this->countModules('nav-side')) : ?>
+	<!-- <?php if ($this->countModules('nav-side')) : ?>
 		<div class="offcanvas-menu">
 			<jdoc:include type="modules" name="nav-side" />
 		</div>
@@ -36,7 +36,7 @@
 			<span class="bar"></span>
 			<span class="bar"></span>
 		</a>
-	<?php endif; ?>
+	<?php endif; ?> -->
 
 	<div class="site-wrap">
 	  <ul class="list-unstyled mb-0 skip-link">
@@ -50,17 +50,20 @@
 	      <div class="container">
 	        <div class="row">
 						<?php if ($this->countModules('htop-left')) : ?>
-						<nav class="col-2 col-lg-7 htop-left d-flex justify-content-start top-nav navbar-expand-lg">
-							<button class="navbar-toggler" type="button" data-toggle="offcanvas-collapse">
-								<i class="fal fa-bars"></i>
-						  </button>
-							<div class="navbar-collapse offcanvas-collapse" id="top-nav">
+							<!-- <nav class="col-2 col-lg-7 htop-left d-flex justify-content-start top-nav navbar-expand-lg">
+								<button class="navbar-toggler" type="button" data-toggle="offcanvas-collapse">
+									<i class="fal fa-bars"></i>
+							  </button>
+								<div class="navbar-collapse offcanvas-collapse" id="top-nav">
+		              <jdoc:include type="modules" name="htop-left" />
+								</div>
+							</nav> -->
+							<nav class="col htop-left d-flex justify-content-start">
 	              <jdoc:include type="modules" name="htop-left" />
-							</div>
-						</nav>
+							</nav>
 						<?php endif; ?>
 						<?php if ($this->countModules('htop-right')) : ?>
-						<div class="col-10 col-lg-5 htop-right d-flex justify-content-end">
+						<div class="col htop-right d-flex justify-content-end">
 							<jdoc:include type="modules" name="htop-right" />
 						</div>
 						<?php endif; ?>
@@ -136,6 +139,10 @@
 	    <jdoc:include type="modules" name="hero" />
 	  <?php endif; ?>
 
+		<div class="" style="height: 500px;">
+
+		</div>
+
 	  <?php if($this->countModules('breadcrumbs')) : ?>
 	    <jdoc:include type="modules" name="breadcrumbs" />
 	  <?php endif; ?>
@@ -204,7 +211,7 @@
 	  <?php endif; ?>
 
 	  <footer class="wrapper footer">
-	    <div class="container pt-3 pb-5">
+	    <div class="container footer-wrapper">
 	      <div class="row footer-sitename">
 	        <div class="col-12 d-flex align-items-center">
 	          <?php if(isset($logo_s) AND $logo_s != '') : ?>
@@ -212,7 +219,7 @@
 	          <?php else : ?>
 	            <img src="http://logo.pizza/img/tri-arc/tri-arc-connected.svg" width="80" height="80" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
 	          <?php endif; ?>
-	          <p class="mb-0"><?php echo $siteName ?></p>
+	          <p><?php echo $siteName ?></p>
 	        </div>
 	      </div>
 

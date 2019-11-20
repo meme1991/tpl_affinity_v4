@@ -1,14 +1,25 @@
 //main: template.scss
 
 .footer{
-  background-color: $footer_bgcolor;
-  color: $footer_text_color;
+  background-color: $gray-800;
   padding-bottom: 0;
+  .footer-wrapper{
+    padding-bottom: 30px;
+  }
 
   .footer-sitename{
     p{
-      color: $footer_text_color;
+      color: $white;
       font-size: 25px;
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-down(sm){
+      img{
+        max-width: 50px;
+      }
+      p{
+        font-size: 20px;
+      }
     }
   }
 
@@ -16,14 +27,17 @@
     border-bottom: 1px $gray-700 solid;
     padding-bottom: 8px;
     h5{
+      font-size: 18px;
       color: $white;
-      font-weight: 700;
+      font-weight: 600;
+      text-transform: uppercase;
     }
   }
 
   p,address,a,small,li{
     color: $light;
     font-size: 15px;
+    font-weight: 300;
   }
 
   a, a:hover, a:focus{
@@ -112,6 +126,12 @@
     .inline-menu{
       ul > li{
         padding-top: 0;
+      }
+    }
+
+    @include media-breakpoint-down(sm){
+      .row > div{
+        margin-bottom: 8px;
       }
     }
 

@@ -99,12 +99,14 @@ jQuery(document).ready(function($) {
   function fixedNavbar() {
       if ($(document).scrollTop() > 186) {
         // $('.header-nav').addClass("fixed-top animated slideInDown");
-        $('.header-banner').addClass("fixed-top");
-        $('#open-button').addClass('menu-scroll');
+        $('.header-nav').addClass("fixed-top");
+        $('.header-banner').addClass("scroll");
+        // $('#open-button').addClass('menu-scroll');
       } else {
         // $('.header-nav').removeClass("fixed-top animated slideInDown");
-        $('.header-banner').removeClass("fixed-top");
-        $('#open-button').removeClass('menu-scroll');
+        $('.header-nav').removeClass("fixed-top");
+        $('.header-banner').removeClass("scroll");
+        // $('#open-button').removeClass('menu-scroll');
       }
   }
   $(window).scroll(fixedNavbar);
