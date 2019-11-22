@@ -126,6 +126,14 @@
 							<i class="fal fa-bars"></i>
 							<span class="navbar-toggler-text"><?= JText::_('TPL_AFFINITY_NAVIGATION') ?></span>
 					  </button>
+						<a href="#" class="navbar-brand">
+							<?php if(isset($logo_s) AND $logo_s != '') : ?>
+								<img src="<?php echo $logo_s ?>" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
+							<?php else : ?>
+								<img src="http://logo.pizza/img/tri-arc/tri-arc-connected.svg" width="80" height="80" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
+							<?php endif; ?>
+							<h1 class="mb-0"><?php echo $siteName ?></h1>
+						</a>
 	          <div class="collapse navbar-collapse" id="meganav">
 	            <jdoc:include type="modules" name="navbar" />
 	          </div>
