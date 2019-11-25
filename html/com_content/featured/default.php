@@ -35,7 +35,7 @@ $doc->addScriptDeclaration("
 		var swiperPartner = new Swiper('.swiper-container.leaditem', {
 	    slidesPerView: 1,
 			autoplay: {
-        delay: 2500,
+        delay: 10000,
         disableOnInteraction: false,
       },
 	    // breakpoints: {
@@ -59,12 +59,7 @@ $doc->addScriptDeclaration("
 ?>
 <section class="wrapper featured-view bg-light" itemscope itemtype="https://schema.org/Blog">
 	<div class="container">
-		<div class="row">
-			<?php if ($this->params->get('show_page_heading') != 0) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->escape($this->params->get('page_heading'))); ?>
-			<?php endif; ?>
-		</div>
-		<div class="row">
+		<div class="row mb-3">
 			<div class="col-12">
 				<div class="swiper-container leaditem">
 					<div class="swiper-wrapper">
@@ -77,6 +72,11 @@ $doc->addScriptDeclaration("
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="row">
+			<?php if ($this->params->get('show_page_heading') != 0) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->escape($this->params->get('page_heading'))); ?>
+			<?php endif; ?>
 		</div>
 		<div class="row grid mt-3">
 			<?php $col = 12/$this->columns; ?>

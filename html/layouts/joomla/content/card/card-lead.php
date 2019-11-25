@@ -11,7 +11,7 @@ defined('JPATH_BASE') or die;
 
 ?>
 <article class="card card-lead" itemscope="" itemtype="http://schema.org/Article">
-  <div class="container-fluid px-0">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-6 lead-image">
         <?php echo JLayoutHelper::render('joomla.content.card.card-lead.card_image', $displayData); ?>

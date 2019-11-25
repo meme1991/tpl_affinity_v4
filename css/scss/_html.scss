@@ -3,6 +3,9 @@
 html,
 body{
   height: 100%;
+  @include media-breakpoint-down(md){
+    margin-top: 92px;
+  }
 }
 
 .wrapper{

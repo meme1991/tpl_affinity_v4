@@ -183,7 +183,8 @@ header{
     // padding-bottom: 20px;
     @include transition(all, 0.3s, ease-in-out);
     @include media-breakpoint-down(md){
-      margin-top: -100px;
+      // position: absolute;
+      margin-top: -112px;
       &.scroll{
         .sitename, .search-bar-icon, .search-wrapper{
           transform: translateY(-34px);
