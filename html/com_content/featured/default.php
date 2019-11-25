@@ -16,6 +16,8 @@ $tmpl = JFactory::getApplication()->getTemplate();
 JHtml::_('jquery.framework');
 $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/masonry.min.js', 'text/javascript', true, false);
 $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/lazyload.min.js', 'text/javascript', true, false);
+$doc->addStyleSheet(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.css');
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/swiper/swiper.min.js');
 $doc->addScriptDeclaration("
 	jQuery(document).ready(function($){
 		if($('.featured-view .grid').length){
@@ -29,6 +31,29 @@ $doc->addScriptDeclaration("
 				grid.masonry('layout');
 			});
 		}
+
+		var swiperPartner = new Swiper('.swiper-container.leaditem', {
+	    slidesPerView: 1,
+			autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+	    // breakpoints: {
+	    //     1024: {
+	    //         slidesPerView: 4,
+	    //         spaceBetween: 40
+	    //     },
+	    //     768: {
+	    //         slidesPerView: 3,
+	    //         spaceBetween: 30
+	    //     },
+	    //     576: {
+	    //         slidesPerView: 1,
+	    //         spaceBetween: 10
+	    //     }
+	    // }
+	  });
+
 	})
 ");
 ?>
@@ -39,12 +64,26 @@ $doc->addScriptDeclaration("
 				<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->escape($this->params->get('page_heading'))); ?>
 			<?php endif; ?>
 		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="swiper-container leaditem">
+					<div class="swiper-wrapper">
+						<?php foreach ($this->lead_items as &$item) : ?>
+							<div class="swiper-slide">
+								<?php $this->item = &$item; ?>
+								<?php echo $this->loadTemplate('lead'); ?>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="row grid mt-3">
 			<?php $col = 12/$this->columns; ?>
 			<div class="grid-sizer col-12 col-sm-12 col-md-6 col-lg-<?php echo $col ?>"></div>
-			<?php $list = array_merge($this->lead_items, $this->intro_items, $this->link_items); ?>
+			<?php $list = array_merge($this->intro_items, $this->link_items); ?>
 			<?php if (!empty($list)) : ?>
-				<?php foreach ($list as &$item) : ?>
+				<?php foreach ($list as $k => &$item) : ?>
 					<div class="grid-item col-12 col-sm-12 col-md-6 col-lg-<?php echo $col ?> mb-3">
 						<?php $this->item = &$item; ?>
 						<?php echo $this->loadTemplate('item'); ?>

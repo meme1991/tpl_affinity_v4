@@ -151,7 +151,7 @@ jQuery(document).ready(function($) {
 
   /************ NASCONDO LA SEARCH BAR SE SONO SOTTO I 768PX ************/
   function hideSearchBar() {
-      if ($(window).width() <= 768) {
+      if ($(window).width() <= 991) {
         $('#searchBarCollapse').addClass("collapse");
       } else {
         $('#searchBarCollapse').removeClass("collapse");
@@ -162,11 +162,11 @@ jQuery(document).ready(function($) {
 
   // se clicco nascondo la lente e metto la close
   $('#searchBarCollapse').on('hide.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="far fa-search"></i>');
+    $('.search-bar-icon > a').html('<i class="fal fa-search"></i>');
   })
 
   $('#searchBarCollapse').on('show.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="far fa-times"></i>');
+    $('.search-bar-icon > a').html('<i class="fal fa-times"></i>');
   })
   /************ END NASCONDO LA SEARCH BAR SE SONO SOTTO I 768PX ************/
 

@@ -1,5 +1,36 @@
 // main:template.scss
 
+.featured-view{
+  .swiper-container.leaditem{
+    width: 100%;
+    // height: 150px;
+    background-color: $white;
+    .swiper-slide {
+
+    }
+  }
+}
+
+.card-lead{
+  height: 300px;
+  .lead-image{
+    figure{
+      margin-bottom: 0;
+      width: 100%;
+      height: 300px;
+      &::after{
+        display: none;
+      }
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+
 /*******************************
 CUSTOMIZZAZIONE ARTICOLO - singolo articolo
 *******************************/

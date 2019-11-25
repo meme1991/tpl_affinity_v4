@@ -17,6 +17,10 @@ header{
 
     // per top-nav collapse
     @include media-breakpoint-down(md){
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       > .container{
         max-width: 100% !important;
       }
@@ -175,37 +179,48 @@ header{
   *******************************/
   .header-banner{
     background-color: $light;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    // padding-top: 20px;
+    // padding-bottom: 20px;
     @include transition(all, 0.3s, ease-in-out);
     @include media-breakpoint-down(md){
-      // transform: translateY(-130px);
-      // top: 34px;
-      // left: 0;
-      // display: none;
-      // transform: translateY(-80px);
-      // > .container{
-      //   max-width: 100% !important;
-      // }
+      margin-top: -100px;
+      &.scroll{
+        .sitename, .search-bar-icon, .search-wrapper{
+          transform: translateY(-34px);
+          @include transition(all, 0.3s, ease-in-out);
+        }
+      }
     }
 
     // site name
-    .site-name{
+    .sitename{
+      @include transition(all, 0.3s, ease-in-out);
       @include link-hover($dark, $dark);
+      @include media-breakpoint-down(md){
+        position: fixed;
+        z-index: 11;
+        top: 32px;
+        left: 60px;
+      }
       a{
         @include transition(all, 0.3s, ease-in-out);
         h1{
+          font-weight: 600;
           font-size: 36px;
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(md){
+            color: $white;
             font-size: 25px;
           }
+          // @include media-breakpoint-down(sm){
+          //   font-size: 25px;
+          // }
         }
       }
       img{
         max-height: 80px;
         width: auto;
         @include transition(all, 0.3s, ease-in-out);
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(md){
           max-height: 50px;
         }
       }
@@ -258,48 +273,37 @@ header{
     }
     // search bar icon
     .search-bar-icon{
-      font-size: 30px;
+      i{
+        color: $white;
+        font-size: 30px;
+      }
       text-align: right;
+      @include transition(all, 0.3s, ease-in-out);
       @include link-hover($dark, $dark);
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-down(md){
+        position: fixed;
+        z-index: 11;
+        top: 47px;
+        right: 15px;
+      }
+      @include media-breakpoint-up(lg) {
         display: none;
       }
     }
-
-    &.scroll{
+    .search-wrapper{
       @include media-breakpoint-down(md){
-        // display: block;
-        .site-name{
-          // transform: translateY(150px);
-          // position: fixed;
-          // top: 150px;
-          // left: 60px;
-          // z-index: 1031;
+        @include transition(all, 0.3s, ease-in-out);
+        position: fixed;
+        z-index: 11;
+        top: 85px;
+        left: 0;
+        input[type="search"]{
+          padding-top: 15px !important;
+          padding-bottom: 15px !important;
+          height: auto !important;
         }
       }
     }
-
-    // &.fixed-top{
-    //   padding: 5px;
-    //   border-bottom: 1px $primary solid;
-    //   @include transition(all, 0.3s, ease-in-out);
-    //   .site-name{
-    //     a{
-    //       @include transition(all, 0.3s, ease-in-out);
-    //       h1{
-    //         font-size: 25px;
-    //       }
-    //     }
-    //     img{
-    //       max-height: 50px;
-    //       width: auto;
-    //       @include transition(all, 0.3s, ease-in-out);
-    //     }
-    //   }
-    //   .social-bar-wrapper{
-    //     display: none;
-    //   }
-    // }
   }
   /*******************************
            NAVBAR STYLE
@@ -312,8 +316,12 @@ header{
       position: fixed;
       top: 34px;
       left: 0;
+      z-index: 10;
       > .container{
         max-width: 100% !important;
+      }
+      &.fixed-top{
+        transform: translateY(-34px);
       }
     }
 
@@ -321,12 +329,12 @@ header{
       background-color: $primary;
       padding: 0 8px;
 
-      @include media-breakpoint-down(sm){
+      @include media-breakpoint-down(md){
         padding: 5px 0;
       }
 
       .navbar-collapse{
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(md){
           margin-top: 5px;
           background-color: $white;
         }
@@ -334,7 +342,7 @@ header{
 
       .navbar-nav{
         > .nav-item{
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(md){
             border-top: 1px $primary solid;
           }
           &.show{
@@ -347,7 +355,7 @@ header{
                         transform: rotate(180deg);
                 @include transition(all, 0.3s, ease-in-out);
               }
-              @include media-breakpoint-down(sm){
+              @include media-breakpoint-down(md){
                 background-color: $primary;
                 color: $white;
                 &:hover{
@@ -361,7 +369,9 @@ header{
             position: relative;
             padding: 15px 20px;
             text-transform: uppercase;
-            @include media-breakpoint-down(sm){
+            color: $white;
+            font-weight: 600;
+            @include media-breakpoint-down(md){
               color: $primary;
               &:hover{
                 background-color: rgba($primary, .3);
