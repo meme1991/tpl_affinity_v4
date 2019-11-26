@@ -22,18 +22,6 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/isotope/isotope.min.
 
 $doc->addScriptDeclaration("
 	jQuery(document).ready(function($){
-		// if($('.items-leading.grid').length){
-		// 	var grid = $('.items-leading.grid').masonry({
-		// 		itemSelector: '.grid-item',
-		// 		columnWidth: '.grid-sizer',
-		// 		percentPosition: true
-		// 	});
-		//
-		// 	grid.imagesLoaded().progress( function() {
-		// 		grid.masonry('layout');
-		// 	});
-		// }
-
 		if($('.items-leading.grid').length){
 
 			var grid = $('.grid').isotope({
@@ -85,40 +73,41 @@ $afterDisplayContent = trim(implode("\n", $results));
 <section class="wrapper blog-view bg-light">
 	<div class="container blog <?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
 		<div class="row">
-			<?php if ($this->params->def('show_description_image', 1) && $this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $this->category->getParams()->get('image'), 'alt' => htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('show_page_heading')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))) ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('show_category_title', 1)) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->category->title) ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('page_subheading')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.subtitle', $this->escape($this->params->get('page_subheading'))) ?>
-			<?php endif; ?>
-			<?php echo $afterDisplayTitle; ?>
-			<div class="col-12 cat-navbar inline-menu">
-				<?php if ($this->maxLevel != 0 && count($this->children[$this->category->id]) > 0) : ?>
-					<ul class="list-inline">
-						<li class="list-inline-item">
-							<a class="nav-link is-checked" data-filter="*" title="Tutti">
-								<i class="fal fa-sync-alt"></i>
-							</a>
-						</li>
-						<?php foreach ($this->children[$this->category->id] as $id => $child) : ?>
-							<?php if ($this->params->get('show_empty_categories') || $child->numitems || count($child->getChildren())) : ?>
-								<li class="list-inline-item">
-									<a class="nav-link" data-filter=".<?= $child->alias ?>" title="<?php echo $this->escape($child->title); ?>">
-										<?php echo $this->escape($child->title); ?>
-									</a>
-								</li>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</ul>
+			<div class="col-12 col-sm-12 col-md-12 col-lg">
+				<?php if ($this->params->def('show_description_image', 1) && $this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $this->category->getParams()->get('image'), 'alt' => htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
 				<?php endif; ?>
-			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg mt-3">
+				<?php if ($this->params->get('show_page_heading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))) ?>
+				<?php endif; ?>
+				<?php if ($this->params->get('show_category_title', 1)) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->category->title) ?>
+				<?php endif; ?>
+				<?php if ($this->params->get('page_subheading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.subtitle', $this->escape($this->params->get('page_subheading'))) ?>
+				<?php endif; ?>
+				<?php echo $afterDisplayTitle; ?>
+
+				<div class="cat-navbar inline-menu">
+					<?php if ($this->maxLevel != 0 && count($this->children[$this->category->id]) > 0) : ?>
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a class="nav-link is-checked" data-filter="*" title="Tutti">
+									<i class="fal fa-sync-alt"></i>
+								</a>
+							</li>
+							<?php foreach ($this->children[$this->category->id] as $id => $child) : ?>
+								<?php if ($this->params->get('show_empty_categories') || $child->numitems || count($child->getChildren())) : ?>
+									<li class="list-inline-item">
+										<a class="nav-link" data-filter=".<?= $child->alias ?>" title="<?php echo $this->escape($child->title); ?>">
+											<?php echo $this->escape($child->title); ?>
+										</a>
+									</li>
+								<?php endif; ?>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
+				</div>
 
 				<?php if ($beforeDisplayContent || $afterDisplayContent || $this->params->get('show_description', 1)) : ?>
 					<div class="category-desc clearfix">

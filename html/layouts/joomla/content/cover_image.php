@@ -11,6 +11,6 @@ defined('JPATH_BASE') or die;
 $image = $displayData['image'];
 $alt   = $displayData['alt'];
 ?>
-<figure class="cover-image mb-0" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+<figure class="cover-image" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
 	<img src="<?php echo $image ?>" alt="<?php echo $alt ?>" itemprop="url">
 </figure>

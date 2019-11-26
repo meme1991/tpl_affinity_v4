@@ -14,14 +14,15 @@ $tparams = $this->params;
 ?>
 <div class="container wrapper contact <?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Person">
 	<div class="row">
-		<?php if ($tparams->get('show_page_heading')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($tparams->get('page_heading'))) ?>
-		<?php endif; ?>
-		<?php echo $this->item->event->afterDisplayTitle; ?>
-		<?php if ($this->contact->name && $tparams->get('show_name')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->contact->name); ?>
-		<?php endif; ?>
 		<div class="col-12">
+			<?php if ($tparams->get('show_page_heading')) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($tparams->get('page_heading'))) ?>
+			<?php endif; ?>
+			<?php echo $this->item->event->afterDisplayTitle; ?>
+			<?php if ($this->contact->name && $tparams->get('show_name')) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->contact->name); ?>
+			<?php endif; ?>
+			
 			<div class="row mt-3">
 				<!-- MAPPA -->
 				<?php // se indirizzo e città sono settati ?>

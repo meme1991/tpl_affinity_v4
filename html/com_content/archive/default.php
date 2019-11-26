@@ -14,10 +14,10 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 <section class="wrapper archive">
 	<div class="container">
 		<div class="row">
-			<?php if ($this->params->get('show_page_heading')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
-			<?php endif; ?>
 			<div class="col-12 mt-3">
+				<?php if ($this->params->get('show_page_heading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
+				<?php endif; ?>
 				<form id="adminForm" action="<?php echo JRoute::_('index.php'); ?>" method="post">
 					<div class="row">
 						<div class="col-12">

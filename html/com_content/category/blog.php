@@ -53,20 +53,20 @@ $afterDisplayContent = trim(implode("\n", $results));
 <section class="wrapper blog-view">
 	<div class="container blog <?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
 		<div class="row">
-			<?php if ($this->params->def('show_description_image', 1) && $this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $this->category->getParams()->get('image'), 'alt' => htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('show_page_heading')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))) ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('show_category_title', 1)) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->category->title) ?>
-			<?php endif; ?>
-			<?php if ($this->params->get('page_subheading')) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.subtitle', $this->escape($this->params->get('page_subheading'))) ?>
-			<?php endif; ?>
-			<?php echo $afterDisplayTitle; ?>
-			<div class="col-12 col-sm-12 col-md-12 col-lg mt-3">
+			<div class="col-12 col-sm-12 col-md-12 col-lg">
+				<?php if ($this->params->def('show_description_image', 1) && $this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $this->category->getParams()->get('image'), 'alt' => htmlspecialchars($this->category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
+				<?php endif; ?>
+				<?php if ($this->params->get('show_page_heading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))) ?>
+				<?php endif; ?>
+				<?php if ($this->params->get('show_category_title', 1)) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->category->title) ?>
+				<?php endif; ?>
+				<?php if ($this->params->get('page_subheading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.subtitle', $this->escape($this->params->get('page_subheading'))) ?>
+				<?php endif; ?>
+				<?php echo $afterDisplayTitle; ?>
 
 				<?php if ($beforeDisplayContent || $afterDisplayContent || $this->params->get('show_description', 1)) : ?>
 					<div class="category-desc clearfix">
@@ -150,7 +150,7 @@ $afterDisplayContent = trim(implode("\n", $results));
 			</div>
 
 			<?php if (($this->maxLevel != 0 && !empty($this->children[$this->category->id])) || $doc->countModules('article-aside')) : ?>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3 sidebar hidden-print">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-4 sidebar hidden-print">
 				<aside class="row">
 					<!-- render module -->
 					<?php $modules = JModuleHelper::getModules('article-aside'); ?>

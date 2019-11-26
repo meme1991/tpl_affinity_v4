@@ -137,34 +137,31 @@ p{
 }
 
 /*******************************
-        TITOLI ARTICOLI
+        TITOLI
 *******************************/
-
-.article-view{
-  h1{
-    font-size: 45px;
-    line-height: 1.2;
-  }
-  h2{
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  h3{
-    font-size: 32px;
-    line-height: 1.2;
-  }
-  h4{
-    font-size: 23px;
-    line-height: 1.2;
-  }
-  h5{
-    font-size: 21px;
-    line-height: 1.2;
-  }
-  h6{
-    font-size: 18px;
-    line-height: 1.55;
-  }
+h1{
+  font-size: 35px;
+  line-height: 1.2;
+}
+h2{
+  font-size: 32px;
+  line-height: 1.2;
+}
+h3{
+  font-size: 28px;
+  line-height: 1.2;
+}
+h4{
+  font-size: 23px;
+  line-height: 1.2;
+}
+h5{
+  font-size: 21px;
+  line-height: 1.2;
+}
+h6{
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 .card{
@@ -208,7 +205,14 @@ p{
 .page-subtitle,
 .title-section{
   width: 100%;
-  padding: 0 15px;
+  // padding: 0 15px;
+}
+
+.page-heading,
+.page-title,
+.page-subtitle{
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .page-heading{
@@ -244,6 +248,28 @@ p{
   }
 }
 
+.category-desc{
+  position: relative;
+  margin-bottom: 20px;
+  p{
+    position: relative;
+    text-align: justify;
+    color: $gray-600;
+    font-size: 16px;
+    &::first-letter{
+      padding-left: 40px;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 30px;
+      height: 5px;
+      background-color: $gray-600;
+    }
+  }
+}
 /********************************
             BUTTONS
 ********************************/

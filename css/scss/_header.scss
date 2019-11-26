@@ -328,7 +328,7 @@ header{
 
     .navbar{
       background-color: $primary;
-      padding: 0 8px;
+      padding: 0;
 
       @include media-breakpoint-down(md){
         padding: 5px 0;
@@ -343,6 +343,13 @@ header{
 
       .navbar-nav{
         > .nav-item{
+          @include media-breakpoint-up(lg){
+            &:first-child(){
+              .nav-link{
+                padding-left: 0;
+              }
+            }
+          }
           @include media-breakpoint-down(md){
             border-top: 1px $primary solid;
           }

@@ -12,32 +12,6 @@
   }
 }
 
-.card-lead{
-  background-color: $light;
-  height: 400px;
-  border: 0;
-  border-radius: 0;
-  .lead-image{
-    padding-left: 0;
-    figure{
-      margin-bottom: 0;
-      width: 100%;
-      height: 400px;
-      &::after{
-        display: none;
-      }
-      img{
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-  .lead-text{
-    padding: 20px 20px 20px 5px;
-  }
-}
-
 
 /*******************************
 CUSTOMIZZAZIONE ARTICOLO - singolo articolo
@@ -83,34 +57,6 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
       margin-top: 32px;
     }
 
-    // figure.default{
-    //   position: relative;
-    //   figcaption{
-    //     background-color: $featured;
-    //     color: #fff;
-    //     opacity: 0;
-    //     -webkit-transform: scale(0.5);
-    //             transform: scale(0.5);
-    //     @include transition(all, 0.3s, ease-in-out);
-    //   }
-    //   a, figcaption{
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //   }
-    //   &:hover{
-    //     figcaption{
-    //       opacity: 0.7;
-    //       -webkit-transform: scale(1);
-    //               transform: scale(1);
-    //       @include transition(all, 0.3s, ease-in-out);
-    //     }
-    //   }
-    // }
-
-
   }
 }
 
@@ -129,28 +75,18 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
   }
 
   .social-share{
-    .fa-inverse{
-      color: $light;
-      @include transition(all, .3s, ease-in-out);
-    }
-
     .facebook{
-      .fa-circle{
+      .fa-circle, .fab{
         color: #4267b2;
       }
     }
     .twitter{
-      .fa-circle{
+      .fa-circle, .fab{
         color: #1da1f2;
       }
     }
-    .google-plus{
-      .fa-circle{
-        color: #db4437;
-      }
-    }
     .whatsapp{
-      .fa-circle{
+      .fa-circle, .fab{
         color: #1EBEA5;
       }
     }

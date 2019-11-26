@@ -120,7 +120,7 @@
 
 			<?php if ($this->countModules('navbar')) : ?>
 	    <div class="header-nav">
-	      <div class="container p-0">
+	      <div class="container">
 					<nav class="navbar navbar-expand-lg navbar-light bg-faded">
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#meganav" aria-controls="meganav" aria-expanded="false" aria-label="Toggle navigation">
 							<i class="fal fa-bars"></i>

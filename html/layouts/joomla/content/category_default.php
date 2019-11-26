@@ -46,19 +46,19 @@ $tagsData = $category->tags->itemTags;
 ?>
 <div class="container wrapper">
 	<div class="row <?php echo $className .'-category' . $displayData->pageclass_sfx; ?>">
-		<?php if ($params->get('show_description_image') && $category->getParams()->get('image')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $category->getParams()->get('image'), 'alt' => htmlspecialchars($category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
-		<?php endif; ?>
-
-		<?php if ($params->get('show_page_heading')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $displayData->escape($params->get('page_heading'))) ?>
-		<?php endif; ?>
-
-		<?php if ($params->get('show_category_title', 1)) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_page', $category->title); ?>
-		<?php endif; ?>
-
 		<div class="col-12 col-sm-12 col-md-12 col-lg">
+			<?php if ($params->get('show_description_image') && $category->getParams()->get('image')) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => $category->getParams()->get('image'), 'alt' => htmlspecialchars($category->getParams()->get('image_alt'), ENT_COMPAT, 'UTF-8'))); ?>
+			<?php endif; ?>
+
+			<?php if ($params->get('show_page_heading')) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $displayData->escape($params->get('page_heading'))) ?>
+			<?php endif; ?>
+
+			<?php if ($params->get('show_category_title', 1)) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $category->title); ?>
+			<?php endif; ?>
+			
 			<?php echo $afterDisplayTitle; ?>
 			<?php if ($params->get('show_cat_tags', 1)) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.tags', $tagsData); ?>

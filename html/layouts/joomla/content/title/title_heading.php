@@ -10,5 +10,5 @@
 defined('JPATH_BASE') or die;
 ?>
 <div class="page-heading">
-  <h6 class="mt-3 mb-0"><?php echo $displayData ?></h6>
+  <h6><?php echo $displayData ?></h6>
 </div>

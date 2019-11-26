@@ -50,25 +50,29 @@ body{
 *********************************/
 .sidebar{
   @extend .align-self-start;
-  border-top: $sidebar_border_width $light solid;
-  border-left: $sidebar_border_width $light solid;
-  border-bottom: $sidebar_border_width $light solid;
+  border-top: 10px $light solid;
+  border-left: 10px $light solid;
+  border-bottom: 10px $light solid;
+  // margin-top: 8px;
   padding-top: 30px;
   padding-bottom: 14px;
   @include media-breakpoint-down(md){
-    margin-top: 16px;
+    border: 0;
+    margin-top: 30px;
   }
 }
 
 .sidebar-alt{
   @extend .align-self-start;
-  border-top: $sidebar_border_width $light solid;
-  border-right: $sidebar_border_width $light solid;
-  border-bottom: $sidebar_border_width $light solid;
+  border-top: 10px $light solid;
+  border-right: 10px $light solid;
+  border-bottom: 10px $light solid;
+  // margin-top: 8px;
   padding-top: 30px;
   padding-bottom: 14px;
   @include media-breakpoint-down(md){
-    margin-top: 16px;
+    border: 0;
+    margin-top: 30px;
   }
 }
 
@@ -167,13 +171,9 @@ o negli articoli
 figure{
   &.cover-image{
     width: 100%;
-    max-height: 300px;
+    height: 300px;
     margin-top: -31px;
-    padding-left: 15px;
-    padding-right: 15px;
-    @media #{$media_sm}{
-      padding: 0;
-    }
+    margin-bottom: 20px;
     img{
       width: 100%;
       height: 100%;

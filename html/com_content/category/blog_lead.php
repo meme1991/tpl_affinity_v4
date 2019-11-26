@@ -10,12 +10,12 @@
 defined('_JEXEC') or die;
 $params  = $this->item->params;
 
-// layout 0 -> block
-// layout 1 -> card-default
+// layout 1 -> block
+// layout 0 -> card-default
 
 if($params->get('layout')):
-  echo JLayoutHelper::render('joomla.content.card.card-default', $this->item);
-else:
   echo $this->loadTemplate('block');
+else:
+  echo JLayoutHelper::render('joomla.content.card.card-default', $this->item);
 endif;
 ?>

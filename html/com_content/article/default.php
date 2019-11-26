@@ -26,7 +26,7 @@ $logo_s         = $templateparams->get('logo-s');
 $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
 ?>
 <div class="wrapper container" itemscope="" itemtype="http://schema.org/NewsArticle">
-	<div class="row">
+	<div class="row justify-content-center">
 		<!-- meta -->
 		<meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="<?php echo $_SERVER['HTTP_REFERER'] ?>">
 
@@ -41,20 +41,20 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 	    <meta itemprop="name" content="<?php echo JFactory::getApplication()->get('sitename') ?>">
 	  </span>
 
-		<?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => htmlspecialchars($images->image_fulltext), 'alt' => htmlspecialchars($images->image_fulltext_alt))); ?>
-		<?php endif; ?>
-
-		<?php if ($this->params->get('show_page_heading')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))); ?>
-		<?php endif; ?>
-
-		<?php if ($params->get('show_title')) : ?>
-			<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->item->title)); ?>
-		<?php endif; ?>
-
-		<div class="col-12 col-sm-12 col-md-12 col-lg-8 mt-3 article-view">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-8 article-view">
 			<article>
+				<?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.cover_image', array('image' => htmlspecialchars($images->image_fulltext), 'alt' => htmlspecialchars($images->image_fulltext_alt))); ?>
+				<?php endif; ?>
+
+				<?php if ($this->params->get('show_page_heading')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_heading', $this->escape($this->params->get('page_heading'))); ?>
+				<?php endif; ?>
+
+				<?php if ($params->get('show_title')) : ?>
+					<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->item->title)); ?>
+				<?php endif; ?>
+
 
 				<?php if ($params->get('show_publish_date') OR $params->get('show_create_date') OR $params->get('show_author') OR $params->get('show_category')) : ?>
 					<?php echo JLayoutHelper::render('joomla.content.info-block-top', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
@@ -158,16 +158,20 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 				<!-- pagination -->
 			</article>
 		</div>
-		<div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3 sidebar d-print-none">
-			<aside class="row">
-				<!-- render module -->
-				<?php $modules = JModuleHelper::getModules('article-aside'); ?>
-				<?php $attribs['style'] = 'sidebar'; ?>
-				<?php foreach ($modules AS $module ) : ?>
-					<?php echo JModuleHelper::renderModule($module, $attribs); ?>
-				<?php endforeach; ?>
-				<!-- render module -->
-			</aside>
-		</div>
+
+		<?php $modules = JModuleHelper::getModules('article-aside'); ?>
+		<?php $attribs['style'] = 'sidebar'; ?>
+		<?php if($modules): ?>
+			<div class="col-12 col-sm-12 col-md-12 col-lg-4 sidebar d-print-none">
+				<aside class="row">
+					<!-- render module -->
+					<?php foreach ($modules AS $module ) : ?>
+						<?php echo JModuleHelper::renderModule($module, $attribs); ?>
+					<?php endforeach; ?>
+					<!-- render module -->
+				</aside>
+			</div>
+		<?php endif; ?>
+
 	</div><!-- end .row -->
 </div><!-- end .container -->
