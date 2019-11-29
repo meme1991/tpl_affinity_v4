@@ -57,7 +57,7 @@ $doc->addScriptDeclaration("
 	})
 ");
 ?>
-<section class="wrapper featured-view bg-light" itemscope itemtype="https://schema.org/Blog">
+<section class="wrapper featured-view" itemscope itemtype="https://schema.org/Blog">
 	<div class="container">
 		<div class="row mb-3">
 			<div class="col-12">
