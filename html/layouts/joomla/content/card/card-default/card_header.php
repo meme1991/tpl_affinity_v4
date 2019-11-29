@@ -17,7 +17,7 @@ $templateparams	= $app->getTemplate(true)->params;
 $logo_s         = $templateparams->get('logo-s');
 ?>
 
-<div class="card-h">
+<div class="card-header">
 
   <!-- meta informazioni solo per aziende o comuni -->
   <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
@@ -33,7 +33,7 @@ $logo_s         = $templateparams->get('logo-s');
 
   <!-- categoria e utente -->
   <?php if($params->get('show_category') OR $params->get('show_author')) : ?>
-  <div class="d-flex justify-content-between">
+  <div class="card-info d-flex justify-content-between">
     <?php if($params->get('show_category')) : ?>
       <small class="card-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CATEGORY') ?>">
         <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CATEGORY') ?></span>
@@ -46,6 +46,19 @@ $logo_s         = $templateparams->get('logo-s');
         <?php endif; ?>
       </small>
     <?php endif; ?>
+
+    <!-- date -->
+    <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
+
+    <?php if($params->get('show_publish_date')) : ?>
+      <small class="card-published" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
+        <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?></span>
+        <?php echo JHtml::_('date', $displayData->publish_up, JText::_('D, d M Y')) ?>
+      </small>
+    <?php else : ?>
+      <meta itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
+    <?php endif; ?>
+    <!-- date -->
 
     <?php if($params->get('show_author')) : ?>
       <?php $author = ($displayData->created_by_alias ?: $displayData->author); ?>
@@ -66,7 +79,7 @@ $logo_s         = $templateparams->get('logo-s');
 
   <!-- titolo -->
   <?php if($params->get('show_title')) : ?>
-    <h3 class="card-title mb-1" itemprop="headline" content="<?php echo $displayData->title ?>">
+    <h3 class="card-title" itemprop="headline" content="<?php echo $displayData->title ?>">
       <?php if($params->get('link_titles')) : ?>
         <a href="<?php echo $link ?>" title="<?php echo $displayData->title ?>">
           <?php echo $displayData->title ?>
@@ -79,15 +92,15 @@ $logo_s         = $templateparams->get('logo-s');
   <!-- titolo -->
 
   <!-- date -->
-  <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
+  <!-- <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
 
   <?php if($params->get('show_publish_date')) : ?>
     <small class="icon-clock d-inline-block" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
       <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?></span>
-      <?php echo JHtml::_('date', $displayData->publish_up, JText::_('DATE_FORMAT_LC1')) ?>
+      <?php echo JHtml::_('date', $displayData->publish_up, JText::_('D, d M Y')) ?>
     </small>
   <?php else : ?>
     <meta itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
-  <?php endif; ?>
+  <?php endif; ?> -->
   <!-- date -->
 </div>

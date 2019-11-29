@@ -13,15 +13,11 @@ $params  = $displayData->params;
 $catLink = JRoute::_(ContentHelperRoute::getCategoryRoute($displayData->catid));
 ?>
 <?php if($params->get('show_intro')) : ?>
-
+  <div class="card-text">
   <?php if($displayData->fulltext != '') : // >>> è settato il leggi tutto... ?>
-    <div class="card-text">
-      <?php echo $displayData->introtext ?>
-    </div>
+    <?php echo $displayData->introtext ?>
   <?php else: // >>> leggi tutto non è settato... ?>
-    <p class="card-text">
-      <?php echo JHtml::_('string.truncate', strip_tags($displayData->introtext), 300) ?>
-    </p>
+    <p><?php echo JHtml::_('string.truncate', strip_tags($displayData->introtext), 300) ?></p>
   <?php endif; ?>
-
+  </div>
 <?php endif; ?>
