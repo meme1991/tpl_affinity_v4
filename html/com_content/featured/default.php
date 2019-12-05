@@ -59,25 +59,29 @@ $doc->addScriptDeclaration("
 ?>
 <section class="wrapper featured-view" itemscope itemtype="https://schema.org/Blog">
 	<div class="container">
-		<div class="row mb-3">
-			<div class="col-12">
-				<div class="swiper-container leaditem">
-					<div class="swiper-wrapper">
-						<?php foreach ($this->lead_items as &$item) : ?>
-							<div class="swiper-slide">
-								<?php $this->item = &$item; ?>
-								<?php echo $this->loadTemplate('lead'); ?>
-							</div>
-						<?php endforeach; ?>
+		<?php if(count($this->lead_items) > 0): ?>
+			<div class="row mb-3">
+				<div class="col-12">
+					<div class="swiper-container leaditem">
+						<div class="swiper-wrapper">
+							<?php foreach ($this->lead_items as &$item) : ?>
+								<div class="swiper-slide">
+									<?php $this->item = &$item; ?>
+									<?php echo $this->loadTemplate('lead'); ?>
+								</div>
+							<?php endforeach; ?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<?php if ($this->params->get('show_page_heading') != 0) : ?>
-				<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->escape($this->params->get('page_heading'))); ?>
-			<?php endif; ?>
-		</div>
+		<?php endif; ?>
+		<?php if ($this->params->get('show_page_heading') != 0) : ?>
+			<div class="row">
+				<div class="col-12">
+					<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->escape($this->params->get('page_heading'))); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="row grid mt-3">
 			<?php $col = 12/$this->columns; ?>
 			<div class="grid-sizer col-12 col-sm-12 col-md-6 col-lg-<?php echo $col ?>"></div>

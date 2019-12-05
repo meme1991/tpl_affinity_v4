@@ -15,7 +15,7 @@ $link   = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $dis
 $alt    = (isset($images->image_intro_alt) AND $images->image_intro_alt != '') ? $images->image_intro_alt : $displayData->title;
 ?>
 <?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
-  <figure class="mb-0 mr-3 float-left default" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+  <figure class="default" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
     <img src="<?php echo htmlspecialchars($images->image_intro, ENT_COMPAT, 'UTF-8'); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($alt, ENT_COMPAT, 'UTF-8'); ?>" itemprop="url" />
     <figcaption class="d-flex justify-content-center align-items-center">
       <i class="far fa-external-link fa-3x"></i>

@@ -38,6 +38,9 @@ CARD
           }
         }
       }
+      .card-title{
+        font-weight: 500;
+      }
     }
     .card-text{
       p{
@@ -71,6 +74,34 @@ CARD
   //   }
   //
   // }
+  &.card-list{
+    flex-direction: row;
+    figure{
+      height: 100%;
+    }
+    .card-image,.card-block{
+      display: inline-block;
+      float: left;
+    }
+    .card-image{
+      width: 40%;
+      @include media-breakpoint-down(md){
+        display: none;
+      }
+    }
+    .card-block{
+      width: 60%;
+      @include media-breakpoint-down(md){
+        width: 100%;
+      }
+    }
+    .read-more{
+      text-align: right;
+      @include media-breakpoint-down(md){
+        text-align: left;
+      }
+    }
+  }
 
   &.card-block{
     border: 0;
@@ -134,32 +165,31 @@ CARD
   }
 }
 
-
-.card-lead{
-  background-color: $light;
-  height: 400px;
-  border: 0;
-  border-radius: 0;
-  .lead-image{
-    padding-left: 0;
-    figure{
-      margin-bottom: 0;
-      width: 100%;
-      height: 400px;
-      &::after{
-        display: none;
-      }
-      img{
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-  .lead-text{
-    padding: 20px 20px 20px 5px;
-  }
-}
+// .card-lead{
+//   background-color: $light;
+//   height: 400px;
+//   border: 0;
+//   border-radius: 0;
+//   .lead-image{
+//     padding-left: 0;
+//     figure{
+//       margin-bottom: 0;
+//       width: 100%;
+//       height: 400px;
+//       &::after{
+//         display: none;
+//       }
+//       img{
+//         object-fit: cover;
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+//   }
+//   .lead-text{
+//     padding: 20px 20px 20px 5px;
+//   }
+// }
 
 // image card default
 .card{
@@ -200,20 +230,24 @@ LISTE
     li{
       border: 0;
       border-top: 2px $light solid;
-      h4{
-        font-weight: 600;
+      .list-title{
+        font-size: 20px;
+        font-weight: 500;
       }
-    }
-  }
-}
-
-// vista blog
-.blog-view{
-  .card-default{
-    background-color: $light;
-    figure{
-      &::after{
-        border-bottom-color: $light;
+      .list-header{
+        padding: 0;
+        background-color: transparent;
+        border-bottom: 0;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        .list-category, .list-author, .list-published{
+          color: $gray-500;
+          font-weight: 600;
+          a, a:hover{
+            color: $gray-500;
+            font-weight: 600;
+          }
+        }
       }
     }
   }

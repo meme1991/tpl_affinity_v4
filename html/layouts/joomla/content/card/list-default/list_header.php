@@ -18,7 +18,7 @@ $templateparams	= $app->getTemplate(true)->params;
 $logo_s         = $templateparams->get('logo-s');
 ?>
 
-<div class="list-h">
+<div class="card-header">
 
   <!-- meta informazioni solo per aziende o comuni -->
   <span itemprop="author" itemscope="" itemtype="https://schema.org/Person">
@@ -32,74 +32,55 @@ $logo_s         = $templateparams->get('logo-s');
     <meta itemprop="name" content="<?php echo JFactory::getApplication()->get('sitename') ?>">
   </span>
 
-  <div class="d-flex justify-content-between">
+  <!-- categoria e utente -->
+  <?php if($params->get('show_category') OR $params->get('show_author')) : ?>
+  <div class="card-info d-flex justify-content-between">
+    <?php if($params->get('show_category')) : ?>
+      <small class="card-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CATEGORY') ?>">
+        <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CATEGORY') ?></span>
+        <?php if($params->get('link_category')) : ?>
+        <a href="<?php echo $catLink ?>">
+          <?php echo $displayData->category_title ?>
+        </a>
+        <?php else: ?>
+          <?php echo $displayData->category_title ?>
+        <?php endif; ?>
+      </small>
+    <?php endif; ?>
+
     <!-- date -->
-    <div class="d-flex justify-content-start">
-      <?php if($params->get('show_create_date')) : ?>
-        <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CREATED_DATE') ?>">
-          <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CREATED_DATE') ?></span>
-          <?php echo JHtml::_('date', $displayData->created, JText::_('DATE_FORMAT_LC1')) ?>
-        </small>
-      <?php endif; ?>
+    <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
 
-      <?php if($params->get('show_modify_date')) : ?>
-        <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?>" itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
-          <i class="fa fa-pencil-square-o"></i>
-          <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?></span>
-          <?php echo JHtml::_('date', $displayData->modified, JText::_('DATE_FORMAT_LC1')) ?>
-        </small>
-      <?php else : ?>
-        <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
-      <?php endif; ?>
-
-      <?php if($params->get('show_publish_date')) : ?>
-        <small class="icon-clock" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
-          <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?></span>
-          <?php echo JHtml::_('date', $displayData->publish_up, JText::_('DATE_FORMAT_LC1')) ?>
-        </small>
-      <?php else : ?>
-        <meta itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
-      <?php endif; ?>
-    </div>
+    <?php if($params->get('show_publish_date')) : ?>
+      <small class="card-published" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
+        <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?></span>
+        <?php echo JHtml::_('date', $displayData->publish_up, JText::_('D, d M Y')) ?>
+      </small>
+    <?php else : ?>
+      <meta itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
+    <?php endif; ?>
     <!-- date -->
 
-    <!-- autore e categoria -->
-    <?php if($params->get('show_category') OR $params->get('show_author')) : ?>
-    <div class="d-flex justify-content-end">
-      <?php if($params->get('show_category')) : ?>
-        <small class="card-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CATEGORY') ?>">
-          <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CATEGORY') ?></span>
-          <?php if($params->get('link_category')) : ?>
-          <a href="<?php echo $catLink ?>">
-            <?php echo $displayData->category_title ?>
-          </a>
-          <?php else: ?>
-            <?php echo $displayData->category_title ?>
-          <?php endif; ?>
-        </small>
-      <?php endif; ?>
-
-      <?php if($params->get('show_author')) : ?>
-        <?php $author = ($displayData->created_by_alias ?: $displayData->author); ?>
-        <small class="card-author" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_AUTHOR') ?>" itemprop="author" itemscope="" itemtype="https://schema.org/Person" content="<?php echo $author ?>">
-          <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_AUTHOR') ?></span>
-          <?php if($params->get('link_author')) : ?>
+    <?php if($params->get('show_author')) : ?>
+      <?php $author = ($displayData->created_by_alias ?: $displayData->author); ?>
+      <small class="card-author" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_AUTHOR') ?>" itemprop="author" itemscope="" itemtype="https://schema.org/Person" content="<?php echo $author ?>">
+        <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_AUTHOR') ?></span>
+        <?php if($params->get('link_author') && isset($displayData->contact_link)) : ?>
           <a href="<?php echo $displayData->contact_link ?>" itemprop="name">
             <?php echo $author ?>
           </a>
-          <?php else: ?>
-            <?php echo $author ?>
-          <?php endif; ?>
-        </small>
-      <?php endif; ?>
-    </div>
+        <?php else: ?>
+          <?php echo $author ?>
+        <?php endif; ?>
+      </small>
     <?php endif; ?>
-    <!-- autore e categoria -->
   </div>
+  <?php endif; ?>
+  <!-- categoria e utente -->
 
   <!-- titolo -->
   <?php if($params->get('show_title')) : ?>
-    <h3 class="card-title mb-3" itemprop="headline" content="<?php echo $displayData->title ?>">
+    <h3 class="card-title" itemprop="headline" content="<?php echo $displayData->title ?>">
       <?php if($params->get('link_titles')) : ?>
         <a href="<?php echo $link ?>" title="<?php echo $displayData->title ?>">
           <?php echo $displayData->title ?>

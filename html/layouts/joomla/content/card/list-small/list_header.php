@@ -13,17 +13,22 @@ $params  = $displayData->params;
 $link    = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language));
 $catLink = JRoute::_(ContentHelperRoute::getCategoryRoute($displayData->catid));
 ?>
+<div class="list-header d-flex justify-content-between">
+  <!-- date -->
+  <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
 
-<div class="d-flex justify-content-between">
   <?php if($params->get('show_publish_date')) : ?>
-    <small class="icon-clock" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
+    <small class="list-published" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
       <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?></span>
-      <?php echo JHtml::_('date', $displayData->publish_up, JText::_('DATE_FORMAT_LC1')) ?>
+      <?php echo JHtml::_('date', $displayData->publish_up, JText::_('D, d M Y')) ?>
     </small>
+  <?php else : ?>
+    <meta itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
   <?php endif; ?>
+  <!-- date -->
 
   <?php if($params->get('show_category')) : ?>
-    <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CATEGORY') ?>">
+    <small class="list-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CATEGORY') ?>">
       <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CATEGORY') ?></span>
       <?php if($params->get('link_category')) : ?>
       <a href="<?php echo $catLink ?>">
@@ -37,7 +42,7 @@ $catLink = JRoute::_(ContentHelperRoute::getCategoryRoute($displayData->catid));
 </div>
 <!-- titolo -->
 <?php if($params->get('show_title')) : ?>
-  <h4>
+  <h4 class="list-title" itemprop="headline" content="<?php echo $displayData->title ?>">
     <?php if($params->get('link_titles')) : ?>
       <a href="<?php echo $link ?>" title="<?php echo $displayData->title ?>">
         <?php echo $displayData->title ?>
@@ -45,6 +50,6 @@ $catLink = JRoute::_(ContentHelperRoute::getCategoryRoute($displayData->catid));
     <?php else : ?>
       <?php echo $displayData->title ?>
     <?php endif; ?>
-  </h4>
+  </h3>
 <?php endif; ?>
 <!-- titolo -->
