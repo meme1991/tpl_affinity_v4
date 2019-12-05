@@ -54,7 +54,7 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 							<?php endif; ?>
 							<div class="read-more text-center">
 						    <a href="<?php echo JRoute::_(ContactHelperRoute::getContactRoute($item->slug, $item->catid)); ?>" class="btn btn-link btn-sm" title="<?php echo $item->name ?>">
-						      <?php echo JText::_('TPL_AFFINITY_ACCESS') ?>
+						      <?php echo JText::_('CONTATTA') ?>
 						    </a>
 							</div>
 
