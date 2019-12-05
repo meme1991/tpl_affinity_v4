@@ -52,11 +52,12 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 									<?php endif; ?>
 							  </div>
 							<?php endif; ?>
-							<div class="d-flex">
-								<a href="<?php echo JRoute::_(ContactHelperRoute::getContactRoute($item->slug, $item->catid)); ?>" title="<?php echo $item->name; ?>" class="btn btn-primary btn-block icon-go">
-									<?php echo JText::_('TPL_AFFINITY_ACCESS') ?>
-								</a>
+							<div class="read-more text-center">
+						    <a href="<?php echo JRoute::_(ContactHelperRoute::getContactRoute($item->slug, $item->catid)); ?>" class="btn btn-link btn-sm" title="<?php echo $item->name ?>">
+						      <?php echo JText::_('TPL_AFFINITY_ACCESS') ?>
+						    </a>
 							</div>
+
 						</div>
 
 					</div>

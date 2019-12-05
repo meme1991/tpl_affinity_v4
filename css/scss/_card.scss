@@ -104,7 +104,9 @@ CARD
   }
 
   &.card-block{
-    border: 0;
+    // border: 0;
+    padding-right: 10px;
+    padding-left: 10px;
     border-radius: 0;
     border-top: 10px $light solid;
     figure.default{
