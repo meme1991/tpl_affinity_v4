@@ -251,6 +251,13 @@ LISTE
           }
         }
       }
+      .list-text{
+        p{
+          text-align: justify;
+          color: $gray-600;
+          font-size: 16px;
+        }
+      }
     }
   }
 }

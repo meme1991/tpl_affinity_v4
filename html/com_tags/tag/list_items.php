@@ -64,9 +64,9 @@ JFactory::getDocument()->addScriptDeclaration("
 			<?php foreach ($this->items as $i => $item) : ?>
 			<li class="list-group-item">
 
-				<div class="d-flex justify-content-between">
+				<div class="list-header d-flex justify-content-between">
 					<?php if($this->params->get('tag_list_show_date')) : ?>
-						<small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
+						<small class="list-published" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
 							<?php echo JHtml::_('date', $item->displayDate, JText::_('DATE_FORMAT_LC1')) ?>
 						</small>
 					<?php endif; ?>
@@ -79,17 +79,17 @@ JFactory::getDocument()->addScriptDeclaration("
 							default: $tagType = 'Articolo'; break;
 						}
 					 ?>
-					<small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('Tipo') ?>">
+					<small class="list-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('Tipo') ?>">
 						<?php echo $tagType ?>
 					</small>
 				</div>
 				<!-- titolo -->
 				<?php if (($item->type_alias == 'com_users.category') || ($item->type_alias == 'com_banners.category')) : ?>
-					<h4>
+					<h4 class="list-title">
 						<?php echo $this->escape($item->core_title); ?>
 					</h4>
 				<?php else : ?>
-					<h4>
+					<h4 class="list-title">
 						<a href="<?php echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>" title="<?php echo $this->escape($item->core_title); ?>">
 							<?php echo $this->escape($item->core_title); ?>
 						</a>
@@ -98,7 +98,9 @@ JFactory::getDocument()->addScriptDeclaration("
 				<!-- titolo -->
 
 				<?php if ($this->params->get('tag_list_show_item_description')) : ?>
-				  <p class="card-text"><?php echo JHtml::_('string.truncate', strip_tags($item->text), $this->params->get('tag_list_item_maximum_characters')); ?></p>
+					<div class="list-text">
+						<p><?php echo JHtml::_('string.truncate', strip_tags($item->text), $this->params->get('tag_list_item_maximum_characters')); ?></p>
+					</div>
 				<?php endif; ?>
 
 			</li>

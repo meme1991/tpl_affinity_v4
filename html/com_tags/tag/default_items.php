@@ -85,11 +85,11 @@ JFactory::getDocument()->addScriptDeclaration("
 						<?php endif; ?>
 
 						<div class="card-block">
-							<div class="card-h">
+							<div class="card-header">
 							  <!-- categoria e utente -->
-							  <div class="d-flex justify-content-between">
+							  <div class="card-info d-flex justify-content-between">
 							    <?php if($this->params->get('tag_list_show_date')) : ?>
-							      <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
+							      <small class="card-published" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
 											<?php echo JHtml::_('date', $item->displayDate, JText::_('DATE_FORMAT_LC1')) ?>
 							      </small>
 							    <?php endif; ?>
@@ -102,7 +102,7 @@ JFactory::getDocument()->addScriptDeclaration("
 											default: $tagType = 'Articolo'; break;
 										}
 									 ?>
-						      <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('Tipo') ?>">
+						      <small class="card-category" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('Tipo') ?>">
 										<?php echo $tagType ?>
 						      </small>
 							  </div>
@@ -110,11 +110,11 @@ JFactory::getDocument()->addScriptDeclaration("
 
 							  <!-- titolo -->
 								<?php if (($item->type_alias == 'com_users.category') || ($item->type_alias == 'com_banners.category')) : ?>
-									<h3 class="card-title mb-1">
+									<h3 class="card-title">
 										<?php echo $this->escape($item->core_title); ?>
 									</h3>
 								<?php else : ?>
-									<h3 class="card-title mb-1">
+									<h3 class="card-title">
 										<a href="<?php echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>" title="<?php echo $this->escape($item->core_title); ?>">
 											<?php echo $this->escape($item->core_title); ?>
 										</a>
@@ -124,7 +124,9 @@ JFactory::getDocument()->addScriptDeclaration("
 							</div>
 
 							<?php if ($this->params->get('tag_list_show_item_description', 1)) : ?>
-								<p class="card-text"><?php echo JHtml::_('string.truncate', strip_tags($item->core_body, '<strong><a>'), $this->params->get('tag_list_item_maximum_characters')) ?></p>
+								<div class="card-text">
+									<p><?php echo JHtml::_('string.truncate', strip_tags($item->core_body, '<strong><a>'), $this->params->get('tag_list_item_maximum_characters')) ?></p>
+								</div>
 				  		<?php endif; ?>
 						</div>
 
