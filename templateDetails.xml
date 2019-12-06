@@ -30,8 +30,8 @@
 		<filename>templateDetails.xml</filename>
 	</files>
 	<languages folder="language">
-		<language tag="it-IT">it-IT/it-IT.tpl_affinty.ini</language>
-		<language tag="it-IT">it-IT/it-IT.tpl_affinty.sys.ini</language>
+		<language tag="it-IT">it-IT/it-IT.tpl_affinity.ini</language>
+		<language tag="it-IT">it-IT/it-IT.tpl_affinity.sys.ini</language>
 	</languages>
 	<positions>
 		<!-- header position -->
